@@ -1,0 +1,16 @@
+{
+	"name": "nikosdion/plg_system_plausible",
+	"description": "Plausible Analytics integration ",
+	"minimum-stability": "stable",
+	"license": "GPL-3.0-or-later",
+	"authors": [
+		{
+			"name": "Nicholas K. Dionysopoulos",
+			"homepage": "https://www.dionysopoulos.me",
+			"role": "Lead Developer"
+		}
+	],
+	"require": {
+		"php": "^7.2|~8.0"
+	}
+}
