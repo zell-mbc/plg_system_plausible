@@ -1,7 +1,7 @@
 <?php
 /*
  * @package   PlgSystemPlausible
- * @copyright Copyright © 2022-2023 Nicholas K. Dionysopoulos
+ * @copyright Copyright © 2022 Nicholas K. Dionysopoulos
  * @license   GPLv3 or later
  */
 
@@ -72,9 +72,20 @@ class Plausible extends CMSPlugin implements SubscriberInterface
 		$customDomain = trim($this->params->get('custom_domain', '') ?: '');
 		$domain       = $customDomain ?: $hostname;
 
+		// Set self hosted server or default to plausible.io.
+		$customServer = trim($this->params->get('custom_server', '') ?: '');
+		if ($customServer === '')
+		{
+			$customServer = 'https://plausible.io/js/plausible.js';
+		}
+		else
+		{
+			$customServer = 'https://' . $customServer . '/js/script.js';
+		}
+
 		// Add the script, deferred
 		$wam = $doc->getWebAssetManager();
-		$wam->registerAndUseScript('plg_system_plausible.plausible', 'https://plausible.io/js/plausible.js', [], [
+		$wam->registerAndUseScript('plg_system_plausible.plausible', $customServer, [], [
 			'defer'       => true,
 			'data-domain' => $domain,
 		]);
