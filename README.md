@@ -3,7 +3,7 @@
 Integrate privacy–respecting [Plausible Analytics](http://plausible.io) with Joomla 4 and 5.
 
 This minor modification adds support for self-hosted Plausible servers to the, now archived, work done by Nikolas
-[Downloads](https://github.com/nikosdion/plg_system_plausible/releases)
+[Repository](https://github.com/nikosdion/plg_system_plausible)
 
 ### Requirements
 
